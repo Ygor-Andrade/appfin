@@ -51,4 +51,14 @@ Route::middleware([
     
     //Rota para inserção no BD dos movimentos
     Route::post('/processa', [MovimentoController::class, 'gravar'])->name('processa');
+
+    //Rotas para o UPDATE - U do CRUD - uma rota para o formukário de atualização 
+    Route::get('/editar/{id}', [MovimentoController::class, 'get_movimento'] ) ->name('editar');
+
+
+    // Rota para processar a atualização
+
+    Route::put('/atualiza', [MovimentoController::class, 'atualizar'] )
+    ->name('atualiza');
+
 });
